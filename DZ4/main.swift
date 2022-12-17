@@ -6,17 +6,49 @@
 //  Created by Nurlan Seitov on 17/12/22.
 //
 
+//import Foundation
+//
+//func funcMod(i: Int){
+//    var string: String = ""
+//    for item in 1...100 where item % i == 0
+//    {
+//     string = string + String(item) + ","
+//        }
+//    print(string) // 2, 4, 6, 8, 10
+//}
+//for item in 2...100 {
+//    print("Номер №\(item)")
+//    funcMod(i: item)
+//}
+// ДЗ №4. #2
+//Используя условные операторы, функции и циклы создать следующую программу:
+//Записать в одну переменную типа String 20 разных слов (с разной длиной) через запятую
+//После того, как созданная ранее функция примет как аргумент созданную строку - вернет следующее (например) - “Яблоко - 6 символов \n Морковь - 7 символов” и т.д до последнего слова
+//
+
 import Foundation
 
-func funcMod(i: Int){
-    var string: String = ""
-    for item in 1...100 where item % i == 0
-    {
-     string = string + String(item) + ","
-        }
-    print(string) // 2, 4, 6, 8, 10
+var text: String = "Яблоки,груши,абрикосы,вишня,персик,бананы,ананасы,хурма,киви,гранаты,картофель,лук,тыква,джусай,капуста,шпинат,кабачки,броколи,укроп,салат листовой,"
+
+var stroka: String = "" //куски символов
+var j: Int = 0 // Счетчик символов
+var k: Int = 0 //Счетчик слов
+
+func numberOfSymbols(s:String){
+    for char in text {
+        
+        
+        if char == "," {
+    print("\(stroka) \(j) символов")
+            k += 1
+            j = 0
+            stroka = ""
+        } else {
+            j += 1
+            stroka += String(char)}
+    }
+    print("Количество слов: \(k)")
+    
 }
-for item in 2...100 {
-    print("Номер №\(item)")
-    funcMod(i: item)
-}
+ numberOfSymbols(s: text)
+
